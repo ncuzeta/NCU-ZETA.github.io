@@ -1,0 +1,26 @@
+/* background.css */
+
+/* 套用固定背景圖片到主內容區 */
+.content {
+    position: relative;
+    min-height: 100vh;
+    background: url("111.png") no-repeat center center fixed; /* 加上 fixed */
+    background-size: cover;
+}
+
+/* 半透明遮罩，避免文字不清楚 */
+.content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 245, 245, 0.85);
+    z-index: 0;
+}
+
+.content > * {
+    position: relative;
+    z-index: 1;
+}
